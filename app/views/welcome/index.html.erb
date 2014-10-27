@@ -1,6 +1,7 @@
 <div class="row">
   <div class="large-12 large-centered columns">
     <h1>As the crow flies</h1>
+    <p>Enter two locations below and choose your preffered unit of measurement to calculate the distance between the two.</p>
   </div>
   <div class="large-12 columns">
     <div id='location1'>
@@ -26,7 +27,13 @@
       </table>
     </div>
   </div>
+
   <div class="large-12 columns">
+    <ul>
+      <li class="button tiny large-5 columns" onclick="calc(3958)">Find the distance in miles</li>
+      <div class="large-2 columns"></div>
+      <li class="button tiny large-5 columns" onclick="calc(6371)">Find the distance in kilometers</li>
+    </ul>
     <%= text_area_tag(:distance) %>
   </div>
 </div>

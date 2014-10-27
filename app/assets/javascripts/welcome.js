@@ -9,8 +9,8 @@ function getCoordinates (address, callback) {
 }
 
 
-function distance(lat1, lon1, lat2, lon2) {
-  var R = 6371; // Radius of the earth in km
+function distance(lat1, lon1, lat2, lon2, unit) {
+  var R = unit;
   var dLat = (lat2 - lat1) * Math.PI / 180;
   var dLon = (lon2 - lon1) * Math.PI / 180;
   var a =
@@ -26,18 +26,19 @@ function writeCoordinates(id1, id2, coordinates){
   $(id2).val(coordinates[1]);
 }
 
-function bingo(){
+function calc(unit){
   var address1 = $("#city1").val();
   getCoordinates(address1, function(coordinates){writeCoordinates("#lat1", "#lon1", coordinates)});
   var address2 = $("#city2").val();
   getCoordinates(address2, function(coordinates){writeCoordinates("#lat2", "#lon2", coordinates)});
-  $("#distance").val(bongo());
+  $("#distance").val(convertToFloat(unit));
 }
 
-function bongo(){
+function convertToFloat(unit){
   var a = parseInt($("#lat1").val());
   var b = parseInt($("#lon1").val());
   var c = parseInt($("#lat2").val());
   var d = parseInt($("#lon2").val());
-  return distance(a,b,c,d);
+  return distance(a,b,c,d,unit);
 }
+
