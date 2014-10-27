@@ -18,7 +18,7 @@ function distance(lat1, lon1, lat2, lon2, unit) {
     Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
     (1 - Math.cos(dLon))/2;
 
-  return R * 2 * Math.asin(Math.sqrt(a));
+  return Math.round(R * 2 * Math.asin(Math.sqrt(a)));
 }
 
 function writeCoordinates(id1, id2, coordinates){
