@@ -13,16 +13,16 @@
           </tr>
         </thead>
         <tr>
-          <td><%= text_area_tag(:city1, "Enter a location") %></td>
-          <td><%= text_area_tag(:city2, "Enter another location") %></td>
+          <td><%= text_field_tag(:city1, "Enter a location") %></td>
+          <td><%= text_field_tag(:city2, "Enter another location") %></td>
         </tr>
         <tr>
-          <td><%= text_area_tag(:lat1) %></td>
-          <td><%= text_area_tag(:lat2) %></td>
+          <td><%= text_field_tag(:lat1, '', :readonly=>true) %></td>
+          <td><%= text_field_tag(:lat2, '', :readonly=>true) %></td>
         </tr>
         <tr>
-          <td><%= text_area_tag(:lon1) %></td>
-          <td><%= text_area_tag(:lon2) %></td>
+          <td><%= text_field_tag(:lon1, '', :readonly=>true) %></td>
+          <td><%= text_field_tag(:lon2, '', :readonly=>true) %></td>
         </tr>
       </table>
     </div>
@@ -34,7 +34,7 @@
       <div class="large-2 columns"></div>
       <li class="button tiny large-5 columns" onclick="calc(6371)">Find the distance in kilometers</li>
     </ul>
-    <%= text_area_tag(:distance) %>
+    <%= text_field_tag(:distance, '', :readonly=>true) %>
   </div>
 </div>
 
