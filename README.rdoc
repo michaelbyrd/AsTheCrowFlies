@@ -11,8 +11,8 @@ locations.
 It is deployed at https://asthecrowflies.herokuapp.com/
 
 There are definitely some issues with the application, so please take a look and
-and let me know if you have any suggestions.  The bulk of the applications code
-can be found in welcome/index.html.erb and javascripts/welcome.js.  I think most
-of the problems are centered around asynchronus javascript request.  I have
-never worked with them before so the idea of callbacks and not being able to
-return something from a function gave me some trouble.
+and let me know if you have any suggestions.  The bulk of the code can be found
+in welcome/index.html.erb and javascripts/welcome.js.  I think most of the
+problems are centered around asynchronus javascript request.  I have never
+worked with them before so the idea of callbacks and not being able to return
+something from a function gave me some trouble.
