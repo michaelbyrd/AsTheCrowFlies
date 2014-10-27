@@ -1,0 +1,22 @@
+<h1>As the crow flies</h1>
+
+<%= text_area_tag(:city1, "Durham") %>
+<%= text_area_tag(:city2, "New York") %>
+
+
+<div id='location1'>
+  <%= text_area_tag(:lat1) %>
+  <%= text_area_tag(:lon1) %>
+</div>
+
+<div id='location2'>
+  <%= text_area_tag(:lat2) %>
+  <%= text_area_tag(:lon2) %>
+</div>
+
+<div id='distace'>
+  <%= text_area_tag(:distance) %>
+</div>
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
