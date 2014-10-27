@@ -14,3 +14,8 @@
  *= require_self
  *= require foundation_and_overrides
  */
+
+
+h1 {
+  text-align: center;
+    }
