@@ -28,10 +28,21 @@ function writeCoordinates(id1, id2, coordinates){
 
 function calc(unit){
   var address1 = $("#city1").val();
-  getCoordinates(address1, function(coordinates){writeCoordinates("#lat1", "#lon1", coordinates)});
+  var defer1 = $.Deferred();
+  defer1.then(function (coordinates) {
+    writeCoordinates("#lat1", "#lon1", coordinates);
+  });
+  getCoordinates(address1, function (coordinates) { defer1.resolve(coordinates) });
+
   var address2 = $("#city2").val();
-  getCoordinates(address2, function(coordinates){writeCoordinates("#lat2", "#lon2", coordinates)});
-  $("#distance").val(convertToFloat(unit));
+  var defer2 = $.Deferred();
+  defer2.then(function (coordinates) {
+    writeCoordinates("#lat2", "#lon2", coordinates);
+  });
+  getCoordinates(address2, function (coordinates) { defer2.resolve(coordinates) });
+  $.when(defer1, defer2).then(function () {
+    $("#distance").val(convertToFloat(unit));  
+  })
 }
 
 function convertToFloat(unit){
